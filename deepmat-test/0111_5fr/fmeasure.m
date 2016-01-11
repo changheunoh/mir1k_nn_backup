@@ -1,0 +1,13 @@
+fprintf(1, 'Correctly classified test samples: %d/%d\n', n_correct, size(X_test, 1));
+disp([9, num2str(test_accu),' %']);
+
+disp( [sum(X_test_labels-1) length(X_test_labels)] );
+
+disp( [sum(pred-1) length(pred)] );
+
+disp( [sum((pred-1==1).*(X_test_labels-1==1)), ...
+    sum((pred-1==1).*(X_test_labels-1==0)); ...
+    sum((pred-1==0).*(X_test_labels-1==1)), ...
+    sum((pred-1==0).*(X_test_labels-1==0))] ...
+);
+    
